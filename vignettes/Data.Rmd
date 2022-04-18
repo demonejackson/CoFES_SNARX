@@ -59,9 +59,6 @@ $$y[t+delay]=f(x[t-d_x],...,x[t-1],x[t],\underline{y[t-s]},y[t-d_y],...,y[t-l], 
 
 ```{r warning=FALSE}
 
-dir.create("inst/doc")
-file.copy(dir("vignettes", full.names=TRUE), "inst/doc", overwrite=TRUE)
-
 library(CoFESSNARX)
 library(dplyr)
 
@@ -85,8 +82,6 @@ delay <- 10 # The number of time steps that the target is in the future
 date <- T # Date or no Date Boolean
 
 data<-CoFESSNARX::CoFESNARXdata(y,x,dy,dx,delay,date)
-
-head(data)
 
 
 y <- CoFESSNARX::returnTARGET(data)
